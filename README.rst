@@ -1,22 +1,20 @@
-=============================
 logstream
 =============================
 
-.. contents::
-
-
 Log to stdout... simply.
 
+Installation
+------------
 
-Quickstart
-----------
+.. code-block:: bash
 
-A Makefile is provided with common tasks::
+    $ pip install logstream
 
-    $ make help
+Usage
+-----
 
-    clean - remove build artifacts and python artifacts
-    .env - make a virtual environment
-    lint - check style with flake8
-    isort - check import order with isort
-    test - run tox
+.. code-block:: python
+
+    >>> from logstream import logger
+    >>> logger.info('Hello, world!')
+    1970-01-01 - INFO - Hello, world!
