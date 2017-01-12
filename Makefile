@@ -12,7 +12,7 @@ help:
 	@echo "build - build the wheel"
 
 .env:
-	python3 -m venv .env --clear
+	virtualenv .env --clear
 	$(pip) install --upgrade pip
 	$(pip) install --upgrade wheel setuptools tox pip-tools twine
 
