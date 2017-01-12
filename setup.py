@@ -18,19 +18,10 @@ setup(
     author_email='jdgillespie91@gmail.com',
     zip_safe=True,
     classifiers=[
-        "Private :: Don't upload",
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'Topic :: Software Development',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.5',
     ],
-    install_requires=[
-        'requests',
-    ],
-    entry_points={
-        'console_scripts': [
-            'logstream = logstream.logstream:main',
-        ],
-    },
 )

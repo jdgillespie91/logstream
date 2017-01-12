@@ -5,6 +5,8 @@ python = $(bin)/python
 pip = $(bin)/pip
 tox = $(bin)/tox
 
+PYPI_TOKEN ?= $PYPI_TOKEN
+
 help:
 	@echo "test - run tox"
 	@echo "build - build the wheel"
@@ -12,7 +14,7 @@ help:
 .env:
 	python3 -m venv .env --clear
 	$(pip) install --upgrade pip
-	$(pip) install --upgrade wheel setuptools tox pip-tools
+	$(pip) install --upgrade wheel setuptools tox pip-tools twine
 
 clean:
 	rm -rf build/
@@ -24,6 +26,9 @@ clean:
 
 build: .env clean
 	$(python) setup.py bdist_wheel
+
+release: build
+	$(python) -m twine upload -r pypitest -p $(PYPI_TOKEN) dist/*
 
 test: .env
 	$(tox)
