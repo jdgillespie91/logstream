@@ -28,7 +28,7 @@ build: .env clean
 	$(python) setup.py bdist_wheel
 
 release: build
-	$(python) -m twine upload -r pypitest -p $(PYPI_TOKEN) dist/*
+	$(python) -m twine upload -r pypitest -u jdgillespie91 -p $(PYPI_TOKEN) dist/*
 
 test: .env
 	$(tox)
